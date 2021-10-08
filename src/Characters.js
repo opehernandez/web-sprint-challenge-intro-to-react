@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 
@@ -20,11 +20,18 @@ const ExpandButton = styled.div`
     font-size: 1rem;
     font-family: Arial Black;
 `
+function showInfo(idx) {
+    
+}
 
 const Characters = (props) => {
-const {name, birthYear} = props
+const {name, birthYear, index} = props
+const [isActive, setIsActive] = useState(false)
 
 
+function showInfo(idx) {
+    setIsActive(!isActive)
+}
 
 
 
@@ -38,7 +45,7 @@ const {name, birthYear} = props
                 <Char>
                     <div className='name'>{name}</div>
                     <div className='year'>{birthYear}</div>
-                    <ExpandButton>EXPAND</ExpandButton>
+                    <ExpandButton className={isActive ? 'hide' : 'show'} onClick={() => showInfo(index)}>{isActive ? 'Close' : 'Expand'}</ExpandButton>
                 </Char>
                 <CharInfo>
                     <div></div>
