@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import styled from "styled-components";
 import axios from 'axios';
 import Characters from './Characters';
 
@@ -16,7 +15,6 @@ const App = () => {
     axios.get('https://swapi.dev/api/people')
     .then(resp => {
       const {data} = resp
-
       setChar(data)
     })
   }, [])
@@ -25,7 +23,7 @@ const App = () => {
     char &&
     <div className="App">
         {char.map((character, idx) => {
-            return <Characters key={idx} index={idx} name={character.name} birthYear={character.birth_year}/>
+            return <Characters key={idx} films={character.films} name={character.name} birthYear={character.birth_year}/>
         })}
         
     </div>

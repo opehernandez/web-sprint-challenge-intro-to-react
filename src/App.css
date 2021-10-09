@@ -5,7 +5,8 @@
   text-align: center;
   width: 60%;
   margin: auto;
-  height: 70vh;
+  margin-top: 5%;
+ 
   background: #fff;
   padding: 2%;
   min-width: 600px;
@@ -35,4 +36,10 @@
   padding:10%;
   text-align: right;
   margin: 10px;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }
